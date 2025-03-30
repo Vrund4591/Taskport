@@ -1,0 +1,60 @@
+// This is a backup file to ensure proper sidebar rendering
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Dashboard from './components/Dashboard';
+import { lightTheme, GlobalStyles } from './theme';
+import './App.css';
+
+// Get the user data
+const users = [
+  {
+    id: 'user1',
+    name: 'John Doe',
+    role: 'Product Designer',
+    avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
+  },
+  {
+    id: 'user2',
+    name: 'Jane Smith',
+    role: 'Frontend Developer',
+    avatar: 'https://randomuser.me/api/portraits/women/44.jpg'
+  },
+  {
+    id: 'user3',
+    name: 'Mike Johnson',
+    role: 'UX Researcher',
+    avatar: 'https://randomuser.me/api/portraits/men/86.jpg'
+  }
+];
+
+// Get the project data
+const projects = [
+  { id: 1, name: 'Marketing Campaign' },
+  { id: 2, name: 'Website Redesign' },
+  { id: 3, name: 'Mobile App Development' },
+  { id: 4, name: 'Customer Research' },
+];
+
+// Make sure our data is available
+const data = { users, projects };
+
+function App() {
+  return (
+    <ThemeProvider theme={lightTheme}>
+      <GlobalStyles />
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <Layout users={users} projects={projects}>
+              <Dashboard data={data} />
+            </Layout>
+          } />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+export default App;

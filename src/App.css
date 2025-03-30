@@ -1,0 +1,127 @@
+:root {
+  --sidebar-expanded-width: 242px; /* Increased by 2px from 240px */
+  --sidebar-collapsed-width: 72px; /* Increased by 2px from 70px */
+  --sidebar-transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  
+  /* Light theme variables */
+  --light-primary: #3366FF;
+  --light-text: #333333;
+  --light-background: #FFFFFF;
+  --light-card-background: #F8F9FA;
+  --light-secondary-background: #E9ECEF;
+  --light-secondary-text: #6C757D;
+  --light-border: #DEE2E6;
+  --light-hover-background: #F1F3F5;
+  --light-high-priority: #DC3545;
+  --light-medium-priority: #FFC107;
+  --light-low-priority: #28A745;
+  
+  /* Dark theme variables */
+  --dark-primary: #4A6FFF;
+  --dark-text: #E9ECEF;
+  --dark-background: #212529;
+  --dark-card-background: #343A40;
+  --dark-secondary-background: #495057;
+  --dark-secondary-text: #ADB5BD;
+  --dark-border: #6C757D;
+  --dark-hover-background: #495057;
+  --dark-high-priority: #E55C6C;
+  --dark-medium-priority: #FFDA6A;
+  --dark-low-priority: #5CCC7A;
+}
+
+/* Reset all styles first */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* CSS variables for different themes */
+body.light-mode {
+  --theme-primary: var(--light-primary);
+  --theme-text: var(--light-text);
+  --theme-background: var(--light-background);
+  --theme-card-background: var(--light-card-background);
+  --theme-secondary-background: var(--light-secondary-background);
+  --theme-secondary-text: var(--light-secondary-text);
+  --theme-border: var(--light-border);
+  --theme-hover-background: var(--light-hover-background);
+  --theme-high-priority: var(--light-high-priority);
+  --theme-medium-priority: var(--light-medium-priority);
+  --theme-low-priority: var(--light-low-priority);
+}
+
+body.dark-mode {
+  --theme-primary: var(--dark-primary);
+  --theme-text: var(--dark-text);
+  --theme-background: var(--dark-background);
+  --theme-card-background: var(--dark-card-background);
+  --theme-secondary-background: var(--dark-secondary-background);
+  --theme-secondary-text: var(--dark-secondary-text);
+  --theme-border: var(--dark-border);
+  --theme-hover-background: var(--dark-hover-background);
+  --theme-high-priority: var(--dark-high-priority);
+  --theme-medium-priority: var(--dark-medium-priority);
+  --theme-low-priority: var(--dark-low-priority);
+}
+
+#root {
+  position: relative;
+  max-width: none;
+  padding: 0;
+  text-align: left;
+}
+
+/* Remove any transitions that might affect layout */
+.no-transition * {
+  transition: none !important;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
